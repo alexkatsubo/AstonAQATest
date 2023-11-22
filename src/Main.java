@@ -17,8 +17,7 @@ public class Main {
         Tasks.multiplyBy6(arr3); // каждое число меньше 6 должно быть умножено на 2
         System.out.println(Arrays.toString(arr3));
         int n = 5; // размер массива
-        int[][] array = new int[n][n];
-        Tasks.fillDiagonal(array);
+        int[][] array = Tasks.fillDiagonal(n);
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 System.out.print(array[i][j] + " ");
