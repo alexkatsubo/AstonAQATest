@@ -50,10 +50,13 @@ public class Tasks {
         }
     }
 
-    public static void fillDiagonal(int[][] arr) {
-        for (int i = 0; i < arr.length; i++) {
+    public static int[][] fillDiagonal(int m ) {
+        int[][] arr = new int[m][m];
+        for (int i = 0; i < m; i++) {
             arr[i][i] = 1;
+            arr[i][m - 1 - i] = 1;
         }
+        return arr;
     }
 
     public static int[] createArray(int len, int initialValue) {
