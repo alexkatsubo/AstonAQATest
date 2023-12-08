@@ -10,18 +10,17 @@ public class Main {
                 "puma", "element", "etnies", "dcshoes", "vans",
                 "converse", "reebok", "diesel", "puma", "nike"};
         Set<String> uniqueWords = new HashSet<>();
-        for (String word : words){
-            if(Collections.frequency(Arrays.asList(words), word)==1){
+        for (String word : words) {
+            if (Collections.frequency(Arrays.asList(words), word) == 1) {
                 uniqueWords.add(word);
             }
         }
-        System.out.println("Уникальные слова: "+ uniqueWords);
-        Map <String, Integer> wordCount = new HashMap<>();
-        for (String word : words){
+        System.out.println("Уникальные слова: " + uniqueWords);
+        Map<String, Integer> wordCount = new HashMap<>();
+        for (String word : words) {
             wordCount.put(word, wordCount.getOrDefault(word, 0) + 1);
         }
         System.out.println("Количество повторений каждого слова:" + wordCount);
-
 
         PhoneBook phoneBook = new PhoneBook();
         phoneBook.add("Седюк", "29-843-11-98");
@@ -38,4 +37,3 @@ public class Main {
 
     }
 }
-
