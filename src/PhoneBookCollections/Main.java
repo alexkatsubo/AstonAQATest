@@ -1,8 +1,7 @@
 package PhoneBookCollections;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,22 +9,19 @@ public class Main {
                 "dcshoes", "reebok", "etnies", "vans", "nike",
                 "puma", "element", "etnies", "dcshoes", "vans",
                 "converse", "reebok", "diesel", "puma", "nike"};
-
-        Map<String, Integer> wordCount = new HashMap<>();
-        for (String word : words) {
+        Set<String> uniqueWords = new HashSet<>();
+        for (String word : words){
+            if(Collections.frequency(Arrays.asList(words), word)==1){
+                uniqueWords.add(word);
+            }
+        }
+        System.out.println("Уникальные слова: "+ uniqueWords);
+        Map <String, Integer> wordCount = new HashMap<>();
+        for (String word : words){
             wordCount.put(word, wordCount.getOrDefault(word, 0) + 1);
         }
+        System.out.println("Количество повторений каждого слова:" + wordCount);
 
-        System.out.println("Уникальные слова:");
-        Set<String> uniqueWords = wordCount.keySet();
-        for (String word : uniqueWords) {
-            System.out.println(word);
-        }
-
-        System.out.println("\nКоличество повторений каждого слова:");
-        for (Map.Entry<String, Integer> entry : wordCount.entrySet()) {
-            System.out.println(entry.getKey() + ": " + entry.getValue());
-        }
 
         PhoneBook phoneBook = new PhoneBook();
         phoneBook.add("Седюк", "29-843-11-98");
