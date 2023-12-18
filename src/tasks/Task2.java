@@ -26,7 +26,7 @@ public class Task2 {
         } else {
             firstElement = collection.get(0);
         }
-        System.out.println("Последний элемент: " + firstElement);
+        System.out.println("Первый элемент: " + firstElement);
     }
 
     public void getLastElement() {
